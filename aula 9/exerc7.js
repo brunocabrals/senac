@@ -11,4 +11,4 @@ function tempo(minutos) {
 
 console.log(tempo(40));
 console.log(tempo(20));
-console.log(tempo(35));git
+console.log(tempo(35));
