@@ -1,0 +1,121 @@
+function validarCPF(cpf) {
+
+    let cpfLimpo = "";
+
+    for (let i = 0; i < cpf.length; i++) {
+
+        if (cpf[i] >= "0" && cpf[i] <= "9") {
+            cpfLimpo += cpf[i];
+        }
+    }
+
+    if (cpfLimpo.length !== 11) {
+        return {
+            valido: false
+        };
+    }
+
+    // Impede 111.111.111-11
+    let todosIguais = true;
+
+    for (let i = 1; i < cpfLimpo.length; i++) {
+
+        if (cpfLimpo[i] !== cpfLimpo[0]) {
+            todosIguais = false;
+        }
+    }
+
+    if (todosIguais) {
+        return {
+            valido: false
+        };
+    }
+
+    // Verifica os dígitos do CPF
+    if (!digitoCPF(cpfLimpo)) {
+        return {
+            valido: false
+        };
+    }
+
+    // Pega o 9º número do CPF
+    let numeroRegional = cpfLimpo[8];
+
+    // new
+    let regiao = new RegiaoCPF(numeroRegional);
+
+    return {
+        valido: true,
+        regiao: regiao.regiao
+    };
+}
+
+function digitoCPF(cpfLimpoValidado) {
+
+    let soma = 0;
+
+    // Primeiro dígito
+    for (let i = 0; i < 9; i++) {
+        soma += Number(cpfLimpoValidado[i]) * (10 - i);
+    }
+
+    let resto = soma % 11;
+    let digito1 = resto < 2 ? 0 : 11 - resto;
+
+    if (digito1 !== Number(cpfLimpoValidado[9])) {
+        return false;
+    }
+
+    soma = 0;
+
+    // Segundo dígito
+    for (let i = 0; i < 10; i++) {
+        soma += Number(cpfLimpoValidado[i]) * (11 - i);
+    }
+
+    resto = soma % 11;
+    let digito2 = resto < 2 ? 0 : 11 - resto;
+
+    if (digito2 !== Number(cpfLimpoValidado[10])) {
+        return false;
+    }
+
+    return true;
+}
+
+class RegiaoCPF {
+
+    constructor(digitoRegional) {
+
+        this.digitoRegional = digitoRegional;
+
+        const regioes = {
+            "0": "RS",
+            "1": "DF, GO, MT, MS, TO",
+            "2": "AM, PA, RR, AP, AC, RO",
+            "3": "CE, MA, PI",
+            "4": "PB, PE, AL, RN",
+            "5": "BA, SE",
+            "6": "MG",
+            "7": "RJ, ES",
+            "8": "SP",
+            "9": "PR, SC"
+        };
+
+        this.regiao = regioes[digitoRegional];
+    }
+}
+
+/*Depois que a validação estiver funcionando, crie um pequeno sistema de cadastro contendo Nome e
+CPF. O cadastro somente deverá ser concluído quando o CPF informado for válido.*/
+
+let nome = prompt("Digite seu nome:");
+let cpF = prompt("Digite seu CPF:");
+
+let result = validarCPF(cpF);
+
+if (result.valido) {
+    alert("Cadastro concluído com sucesso!\nNome: " + nome + "\nCPF: " + cpF + "\nRegião: " + result.regiao);
+} else {
+    alert("CPF inválido! O cadastro não pode ser concluído.");
+}
