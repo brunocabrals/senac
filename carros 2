@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Meu site de carros</title>
+
+    <style>
+        body {
+            background-color: gray;
+            font-family: Arial;
+            color: white;
+        }
+
+        h1 {
+            color: red;
+            text-align: center;
+        }
+
+        h2 {
+            color: red;
+        }
+
+        header {
+            background-color: black;
+            padding: 10px;
+            text-align: center;
+        }
+
+        a {
+            color: white;
+            margin: 10px;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        .carro {
+            background-color: #444;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        img {
+            width: 250px;
+        }
+
+        footer {
+            background-color: black;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Meu site de carros</h1>
+
+        <a href="#inicio">Início</a>
+        <a href="#carros">Carros</a>
+        <a href="#sobre">Sobre</a>
+    </header>
+
+    <section id="inicio">
+        <h2>Carros esportivos</h2>
+
+        <p>
+            Bem-vindo ao meu site de carros.
+            Aqui vou mostrar alguns carros esportivos
+            e falar um pouco sobre eles.
+        </p>
+    </section>
+
+    <section id="carros">
+        <h2>Carros</h2>
+
+        <div class="carro">
+            <h3>Porsche 911</h3>
+
+            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=600&q=80" alt="Porsche 911">
+
+            <p>O Porsche é um carro esportivo conhecido pelo seu design.</p>
+        </div>
+
+        <div class="carro">
+            <h3>Ferrari</h3>
+
+            <img src="https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&w=600&q=80" alt="Carro esportivo vermelho">
+
+            <p>A Ferrari é uma marca italiana de carros esportivos.</p>
+        </div>
+
+        <div class="carro">
+            <h3>Carros de luxo</h3>
+
+            <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=600&q=80" alt="Carro de luxo">
+
+            <p>Esses carros possuem design moderno e muita tecnologia.</p>
+        </div>
+    </section>
+
+    <section id="sobre">
+        <h2>Sobre o site</h2>
+
+        <p>
+            Fiz este site para um projeto de estudo
+            usando HTML e CSS.
+        </p>
+    </section>
+
+    <footer>
+        <p>Meu site de carros - 2026</p>
+    </footer>
+
+</body>
+</html>
