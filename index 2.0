@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portifólio</title>
+
+    <style>
+        body {
+            background-color: #080808;
+            color: white;
+            font-family: Arial;
+            margin: 0;
+        }
+
+        header {
+            background-color: #111;
+            border-bottom: 2px solid #168cff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1, h2 {
+            font-family: Impact, sans-serif;
+            letter-spacing: 2px;
+        }
+
+        h1 {
+            color: #168cff;
+            font-size: 45px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 15px;
+        }
+
+        nav a:hover {
+            color: #168cff;
+        }
+
+        section {
+            padding: 30px;
+        }
+
+        h2 {
+            color: #168cff;
+            font-size: 30px;
+        }
+
+        .inicio {
+            text-align: center;
+            padding: 60px 20px;
+            background-color: #101820;
+        }
+
+        .inicio p {
+            font-size: 18px;
+        }
+
+        .projeto {
+            background-color: #171717;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #168cff;
+        }
+
+        .projeto img {
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .botao {
+        background-color: #168cff;
+        color: white;
+        padding: 12px 20px;
+        border-radius: 10px;
+        text-decoration: none;
+        display: inline-block;
+        margin-top: 10px;
+       
+        }
+        .assinatura {
+            font-family: "Brush Script MT", cursive;
+            font-size: 150px !important;
+            color: #168cff;
+            text-align: center;
+            margin-top: 20px;
+            transform: rotate(-5deg);
+        }
+
+        footer {
+            background-color: #111;
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(90deg, #0A192F,#112D4E, #2563eb);;
+        }
+         /* Ajuste para celulares */
+        @media (max-width: 600px) {
+            nav a {
+                display: inline-block;
+                margin: 8px;
+            }
+
+            .inicio h2 {
+                font-size: 26px;
+            }
+
+            .card {
+                width: 100%;
+                max-width: 320px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>MEU PORTIFÓLIO</h1>
+
+        <nav>
+    <a href="index.html">Início</a>
+    <a href="sobre.html">Sobre mim</a>
+    <a href="contato.html">Contato</a>
+        </nav>
+    </header>
+
+    <section class="inicio" id="inicio">
+        <h2>OLÁ, EU SOU O SEU DESIGNER!</h2>
+
+        <p>Bem-vindo ao meu portifólio!</p>
+        <p>Aqui você pode conhecer um pouco do meu trabalho e dos meus projetos.</p>
+
+       <a href="projetos.html" class="botao">
+    Ver meus projetos
+        </a>
+        <p class="assinatura">Bruno Soares</p>
+    </section>
+    <footer>
+        <p>Meu Portifólio - 2026</p>
+    </footer>
+
+</body>
+</html>
